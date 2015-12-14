@@ -13,6 +13,7 @@ class ViewController: NSViewController {
     // 0.414059 is 180 cd/m²
     let oneCandel: Float = 0.414059 / 180.0
 
+    var darkModeObserver: AnyObject?
     var activationObserver: AnyObject?
     var deactivationObserver: AnyObject?
     var eventMonitor: AnyObject?
@@ -20,6 +21,10 @@ class ViewController: NSViewController {
 
     deinit {
         timer?.invalidate()
+
+        if darkModeObserver != nil {
+            NSDistributedNotificationCenter.defaultCenter().removeObserver(darkModeObserver!)
+        }
 
         let center = NSNotificationCenter.defaultCenter()
 
@@ -38,6 +43,10 @@ class ViewController: NSViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        darkModeObserver = NSDistributedNotificationCenter.defaultCenter().addObserverForName("AppleInterfaceThemeChangedNotification", object: nil, queue: nil) { [weak self] notification in
+            self?.toggleDarkMode()
+        }
 
         let center = NSNotificationCenter.defaultCenter()
 
@@ -63,6 +72,7 @@ class ViewController: NSViewController {
 
     override func viewDidAppear() {
         super.viewDidAppear()
+        toggleDarkMode()
         updateCurrentBrightnessValue()
     }
 
@@ -115,7 +125,7 @@ class ViewController: NSViewController {
 
     @IBOutlet weak var blurView: NSVisualEffectView! {
         didSet {
-            blurView.material = .Popover
+            blurView.material = .AppearanceBased
             blurView.maskImage = createMaskImage(cornerRadius: 4)
         }
     }
@@ -226,5 +236,15 @@ class ViewController: NSViewController {
 
         sliderDidChangeValue(brightnessSlider)
     }
-    
+
+    private func toggleDarkMode() {
+        let defaults = NSUserDefaults.standardUserDefaults().persistentDomainForName(NSGlobalDomain)
+        if let style = defaults?["AppleInterfaceStyle"]?.lowercaseString where style == "dark" {
+            blurView.appearance = NSAppearance(named: NSAppearanceNameVibrantDark)
+        }
+        else {
+            blurView.appearance = NSAppearance(named: NSAppearanceNameVibrantLight)
+        }
+    }
+
 }
