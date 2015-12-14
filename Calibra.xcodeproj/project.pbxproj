@@ -13,6 +13,11 @@
 		FAA5427C1BF923C500B7BE11 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FAA5427A1BF923C500B7BE11 /* Main.storyboard */; };
 		FAA542871BF923C500B7BE11 /* CalibraTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA542861BF923C500B7BE11 /* CalibraTests.swift */; };
 		FAA542921BF923C500B7BE11 /* CalibraUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA542911BF923C500B7BE11 /* CalibraUITests.swift */; };
+		FAB1CC411C1F289C00DB7BEE /* WindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB1CC401C1F289C00DB7BEE /* WindowController.swift */; };
+		FAB1CC431C1F4E1400DB7BEE /* NSButtonExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB1CC421C1F4E1400DB7BEE /* NSButtonExtensions.swift */; };
+		FAB1CC451C1F592F00DB7BEE /* NSWindowExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB1CC441C1F592F00DB7BEE /* NSWindowExtensions.swift */; };
+		FAB1CC471C1F68F200DB7BEE /* Window.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB1CC461C1F68F200DB7BEE /* Window.swift */; };
+		FAB1CC491C1F6BFC00DB7BEE /* Device.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB1CC481C1F6BFB00DB7BEE /* Device.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,6 +50,11 @@
 		FAA5428D1BF923C500B7BE11 /* CalibraUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CalibraUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		FAA542911BF923C500B7BE11 /* CalibraUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalibraUITests.swift; sourceTree = "<group>"; };
 		FAA542931BF923C500B7BE11 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FAB1CC401C1F289C00DB7BEE /* WindowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WindowController.swift; sourceTree = "<group>"; };
+		FAB1CC421C1F4E1400DB7BEE /* NSButtonExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSButtonExtensions.swift; sourceTree = "<group>"; };
+		FAB1CC441C1F592F00DB7BEE /* NSWindowExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSWindowExtensions.swift; sourceTree = "<group>"; };
+		FAB1CC461C1F68F200DB7BEE /* Window.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Window.swift; sourceTree = "<group>"; };
+		FAB1CC481C1F6BFB00DB7BEE /* Device.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Device.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,7 +90,9 @@
 				FAA542901BF923C500B7BE11 /* CalibraUITests */,
 				FAA542721BF923C500B7BE11 /* Products */,
 			);
+			indentWidth = 4;
 			sourceTree = "<group>";
+			tabWidth = 4;
 		};
 		FAA542721BF923C500B7BE11 /* Products */ = {
 			isa = PBXGroup;
@@ -96,10 +108,15 @@
 			isa = PBXGroup;
 			children = (
 				FAA542741BF923C500B7BE11 /* AppDelegate.swift */,
+				FAB1CC441C1F592F00DB7BEE /* NSWindowExtensions.swift */,
 				FAA542761BF923C500B7BE11 /* ViewController.swift */,
+				FAB1CC481C1F6BFB00DB7BEE /* Device.swift */,
+				FAB1CC461C1F68F200DB7BEE /* Window.swift */,
 				FAA542781BF923C500B7BE11 /* Assets.xcassets */,
 				FAA5427A1BF923C500B7BE11 /* Main.storyboard */,
 				FAA5427D1BF923C500B7BE11 /* Info.plist */,
+				FAB1CC401C1F289C00DB7BEE /* WindowController.swift */,
+				FAB1CC421C1F4E1400DB7BEE /* NSButtonExtensions.swift */,
 			);
 			path = Calibra;
 			sourceTree = "<group>";
@@ -253,7 +270,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				FAA542771BF923C500B7BE11 /* ViewController.swift in Sources */,
+				FAB1CC411C1F289C00DB7BEE /* WindowController.swift in Sources */,
 				FAA542751BF923C500B7BE11 /* AppDelegate.swift in Sources */,
+				FAB1CC431C1F4E1400DB7BEE /* NSButtonExtensions.swift in Sources */,
+				FAB1CC451C1F592F00DB7BEE /* NSWindowExtensions.swift in Sources */,
+				FAB1CC491C1F6BFC00DB7BEE /* Device.swift in Sources */,
+				FAB1CC471C1F68F200DB7BEE /* Window.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -475,6 +497,7 @@
 				FAA542981BF923C500B7BE11 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		FAA542991BF923C500B7BE11 /* Build configuration list for PBXNativeTarget "CalibraTests" */ = {
 			isa = XCConfigurationList;
@@ -483,6 +506,7 @@
 				FAA5429B1BF923C500B7BE11 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		FAA5429C1BF923C500B7BE11 /* Build configuration list for PBXNativeTarget "CalibraUITests" */ = {
 			isa = XCConfigurationList;
@@ -491,6 +515,7 @@
 				FAA5429E1BF923C500B7BE11 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

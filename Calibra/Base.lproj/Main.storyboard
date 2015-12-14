@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="6198" systemVersion="14A297b" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
+<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="6198"/>
+        <deployment identifier="macosx"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="9531"/>
     </dependencies>
     <scenes>
         <!--Application-->
@@ -641,20 +642,19 @@
                         <outlet property="delegate" destination="Voe-Tx-rLC" id="PrD-fu-P6m"/>
                     </connections>
                 </application>
-                <customObject id="Voe-Tx-rLC" customClass="AppDelegate" customModuleProvider="target"/>
+                <customObject id="Voe-Tx-rLC" customClass="AppDelegate" customModule="Calibra" customModuleProvider="target"/>
                 <customObject id="Ady-hI-5gd" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="75" y="0.0"/>
         </scene>
-        <!--Window Controller - Window-->
+        <!--Window Controller-->
         <scene sceneID="R2V-B0-nI4">
             <objects>
-                <windowController id="B8D-0N-5wS" sceneMemberID="viewController">
-                    <window key="window" title="Window" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" oneShot="NO" releasedWhenClosed="NO" showsToolbarButton="NO" visibleAtLaunch="NO" animationBehavior="default" id="IQv-IB-iLA">
-                        <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
+                <windowController showSeguePresentationStyle="single" id="B8D-0N-5wS" customClass="WindowController" customModule="Calibra" customModuleProvider="target" sceneMemberID="viewController">
+                    <window key="window" title="Window" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" restorable="NO" hidesOnDeactivate="YES" showsToolbarButton="NO" animationBehavior="default" id="IQv-IB-iLA" customClass="Window" customModule="Calibra" customModuleProvider="target">
                         <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
                         <rect key="contentRect" x="196" y="240" width="480" height="270"/>
-                        <rect key="screenRect" x="0.0" y="0.0" width="1680" height="1027"/>
+                        <rect key="screenRect" x="0.0" y="0.0" width="2560" height="1417"/>
                     </window>
                     <connections>
                         <segue destination="XfG-lQ-9wD" kind="relationship" relationship="window.shadowedContentViewController" id="cq2-FE-JQM"/>
@@ -667,15 +667,85 @@
         <!--View Controller-->
         <scene sceneID="hIz-AP-VOD">
             <objects>
-                <viewController id="XfG-lQ-9wD" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" id="m2S-Jp-Qdl">
-                        <rect key="frame" x="0.0" y="0.0" width="480" height="270"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </view>
+                <viewController id="XfG-lQ-9wD" customClass="ViewController" customModule="Calibra" customModuleProvider="target" sceneMemberID="viewController">
+                    <visualEffectView key="view" appearanceType="vibrantLight" blendingMode="behindWindow" state="active" id="0hp-Yh-pom">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="174"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                        <subviews>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="8w5-kj-w1T">
+                                <rect key="frame" x="291" y="115" width="18" height="19"/>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" title="0" id="aG6-cv-9Vl">
+                                    <font key="font" size="16" name=".AppleSystemUIFont"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <slider verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="xTf-Ml-2jB">
+                                <rect key="frame" x="69" y="77" width="462" height="20"/>
+                                <sliderCell key="cell" continuous="YES" state="on" alignment="left" maxValue="1" tickMarkPosition="above" sliderType="linear" id="BC3-DN-ohA"/>
+                                <connections>
+                                    <action selector="sliderDidChangeValue:" target="XfG-lQ-9wD" id="Mo2-mI-nVp"/>
+                                </connections>
+                            </slider>
+                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="tla-4k-Lb5">
+                                <rect key="frame" x="280" y="40" width="41" height="19"/>
+                                <buttonCell key="cell" type="bevel" title="Save" bezelStyle="regularSquare" alignment="center" imageScaling="proportionallyDown" inset="2" id="Ner-Ct-gYv">
+                                    <behavior key="behavior" lightByContents="YES"/>
+                                    <font key="font" metaFont="systemSemibold" size="16"/>
+                                </buttonCell>
+                            </button>
+                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="w2S-dV-47L">
+                                <rect key="frame" x="40" y="81" width="11" height="15"/>
+                                <buttonCell key="cell" type="smallSquare" bezelStyle="smallSquare" image="NSRemoveTemplate" imagePosition="overlaps" alignment="center" lineBreakMode="truncatingTail" state="on" imageScaling="proportionallyDown" inset="2" id="3Cu-sx-dqf">
+                                    <behavior key="behavior" lightByContents="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="onMinusButtonAction:" target="XfG-lQ-9wD" id="3YE-VI-XRr"/>
+                                </connections>
+                            </button>
+                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="7fu-6W-RnN">
+                                <rect key="frame" x="549" y="81" width="11" height="15"/>
+                                <buttonCell key="cell" type="smallSquare" bezelStyle="smallSquare" image="NSAddTemplate" imagePosition="overlaps" alignment="center" lineBreakMode="truncatingTail" state="on" imageScaling="proportionallyDown" inset="2" id="Xd1-K9-B2d">
+                                    <behavior key="behavior" lightByContents="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="onPlusButtonAction:" target="XfG-lQ-9wD" id="bY7-HY-yDF"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="7fu-6W-RnN" firstAttribute="leading" secondItem="xTf-Ml-2jB" secondAttribute="trailing" constant="20" id="B2q-Zn-n26"/>
+                            <constraint firstItem="tla-4k-Lb5" firstAttribute="centerX" secondItem="0hp-Yh-pom" secondAttribute="centerX" id="QMr-IX-oiQ"/>
+                            <constraint firstItem="xTf-Ml-2jB" firstAttribute="leading" secondItem="w2S-dV-47L" secondAttribute="trailing" constant="20" id="QOS-S6-O74"/>
+                            <constraint firstItem="tla-4k-Lb5" firstAttribute="top" secondItem="xTf-Ml-2jB" secondAttribute="bottom" constant="20" id="Qih-eh-mS6"/>
+                            <constraint firstItem="w2S-dV-47L" firstAttribute="leading" secondItem="0hp-Yh-pom" secondAttribute="leading" constant="40" id="ZiQ-tE-eRR"/>
+                            <constraint firstItem="xTf-Ml-2jB" firstAttribute="top" secondItem="8w5-kj-w1T" secondAttribute="bottom" constant="20" id="d1L-Pe-LK5"/>
+                            <constraint firstItem="8w5-kj-w1T" firstAttribute="centerX" secondItem="0hp-Yh-pom" secondAttribute="centerX" id="jLR-vc-379"/>
+                            <constraint firstItem="7fu-6W-RnN" firstAttribute="centerY" secondItem="xTf-Ml-2jB" secondAttribute="centerY" constant="-1" id="nQs-3E-m0J"/>
+                            <constraint firstItem="8w5-kj-w1T" firstAttribute="top" secondItem="0hp-Yh-pom" secondAttribute="top" constant="40" id="oKP-1G-H0L"/>
+                            <constraint firstAttribute="bottom" secondItem="tla-4k-Lb5" secondAttribute="bottom" constant="40" id="pa5-Tj-Noo"/>
+                            <constraint firstItem="xTf-Ml-2jB" firstAttribute="centerY" secondItem="w2S-dV-47L" secondAttribute="centerY" constant="1" id="tTl-ZV-UCp"/>
+                            <constraint firstAttribute="trailing" secondItem="7fu-6W-RnN" secondAttribute="trailing" constant="40" id="ujd-rI-OR5"/>
+                        </constraints>
+                    </visualEffectView>
+                    <connections>
+                        <outlet property="blurView" destination="0hp-Yh-pom" id="CdI-If-e9Y"/>
+                        <outlet property="brightnessSlider" destination="xTf-Ml-2jB" id="gZf-8g-dsw"/>
+                        <outlet property="brightnessValue" destination="8w5-kj-w1T" id="rei-DF-AcJ"/>
+                        <outlet property="minusButton" destination="w2S-dV-47L" id="oNR-xN-dts"/>
+                        <outlet property="plusButton" destination="7fu-6W-RnN" id="XUh-LX-dAw"/>
+                        <outlet property="saveButton" destination="tla-4k-Lb5" id="P9Z-LS-l3U"/>
+                    </connections>
                 </viewController>
                 <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="75" y="655"/>
+            <point key="canvasLocation" x="75" y="641"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="NSAddTemplate" width="11" height="11"/>
+        <image name="NSRemoveTemplate" width="11" height="11"/>
+    </resources>
 </document>
