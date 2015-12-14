@@ -18,6 +18,7 @@
 		FAB1CC451C1F592F00DB7BEE /* NSWindowExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB1CC441C1F592F00DB7BEE /* NSWindowExtensions.swift */; };
 		FAB1CC471C1F68F200DB7BEE /* Window.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB1CC461C1F68F200DB7BEE /* Window.swift */; };
 		FAB1CC491C1F6BFC00DB7BEE /* Device.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB1CC481C1F6BFB00DB7BEE /* Device.swift */; };
+		FAB1CC4B1C1F836000DB7BEE /* Slider.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB1CC4A1C1F836000DB7BEE /* Slider.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +56,7 @@
 		FAB1CC441C1F592F00DB7BEE /* NSWindowExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSWindowExtensions.swift; sourceTree = "<group>"; };
 		FAB1CC461C1F68F200DB7BEE /* Window.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Window.swift; sourceTree = "<group>"; };
 		FAB1CC481C1F6BFB00DB7BEE /* Device.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Device.swift; sourceTree = "<group>"; };
+		FAB1CC4A1C1F836000DB7BEE /* Slider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Slider.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,6 +111,7 @@
 			children = (
 				FAA542741BF923C500B7BE11 /* AppDelegate.swift */,
 				FAB1CC441C1F592F00DB7BEE /* NSWindowExtensions.swift */,
+				FAB1CC4A1C1F836000DB7BEE /* Slider.swift */,
 				FAA542761BF923C500B7BE11 /* ViewController.swift */,
 				FAB1CC481C1F6BFB00DB7BEE /* Device.swift */,
 				FAB1CC461C1F68F200DB7BEE /* Window.swift */,
@@ -271,6 +274,7 @@
 			files = (
 				FAA542771BF923C500B7BE11 /* ViewController.swift in Sources */,
 				FAB1CC411C1F289C00DB7BEE /* WindowController.swift in Sources */,
+				FAB1CC4B1C1F836000DB7BEE /* Slider.swift in Sources */,
 				FAA542751BF923C500B7BE11 /* AppDelegate.swift in Sources */,
 				FAB1CC431C1F4E1400DB7BEE /* NSButtonExtensions.swift in Sources */,
 				FAB1CC451C1F592F00DB7BEE /* NSWindowExtensions.swift in Sources */,

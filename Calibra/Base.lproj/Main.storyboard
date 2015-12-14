@@ -680,7 +680,7 @@
                                     <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
-                            <slider verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="xTf-Ml-2jB">
+                            <slider verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="xTf-Ml-2jB" customClass="Slider" customModule="Calibra" customModuleProvider="target">
                                 <rect key="frame" x="69" y="77" width="462" height="20"/>
                                 <sliderCell key="cell" continuous="YES" state="on" alignment="left" maxValue="1" tickMarkPosition="above" sliderType="linear" id="BC3-DN-ohA"/>
                                 <connections>

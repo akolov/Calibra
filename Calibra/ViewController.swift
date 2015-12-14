@@ -11,7 +11,7 @@ import Cocoa
 class ViewController: NSViewController {
 
     // 0.414059 is 180 cd/m²
-    let oneCandel: Float = 0.414059 / 180.0
+    let oneCandel: Float = 0.414059 / 180
 
     var darkModeObserver: AnyObject?
     var activationObserver: AnyObject?
@@ -179,6 +179,10 @@ class ViewController: NSViewController {
         default:
             break
         }
+    }
+
+    override func scrollWheel(theEvent: NSEvent) {
+        brightnessSlider.scrollWheel(theEvent)
     }
 
     private func createMaskImage(cornerRadius cornerRadius: CGFloat) -> NSImage {
