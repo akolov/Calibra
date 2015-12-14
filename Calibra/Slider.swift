@@ -12,7 +12,16 @@ class Slider: NSSlider {
 
     override func scrollWheel(theEvent: NSEvent) {
         let range = maxValue - minValue
-        let increment = (range * Double(theEvent.deltaY)) / 1000.0
+
+        var delta: CGFloat = 0
+        if abs(theEvent.deltaX) > abs(theEvent.deltaY) {
+            delta = theEvent.deltaX
+        }
+        else {
+            delta = -theEvent.deltaY
+        }
+
+        let increment = (range * Double(delta)) / 1000.0
         var value = doubleValue + increment
 
         if value < minValue {
